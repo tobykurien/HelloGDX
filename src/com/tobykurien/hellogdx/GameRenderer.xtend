@@ -28,9 +28,12 @@ class GameRenderer extends Renderer {
          glClear(GL10.GL_COLOR_BUFFER_BIT.bitwiseOr(GL10.GL_DEPTH_BUFFER_BIT))  
       ]
 
-      val tr = (simulation as GameSimulation).shipTranslate
+      val sim = simulation as GameSimulation
+      val tr = sim.shipTranslation
+      val rotX = sim.rotationX
+
       camera.position.set(tr.cpy.add(0,1,-3))
-      //camera.lookAt(tr.add(rotX,0,100))
+      camera.lookAt(tr.add(rotX,0,100))
       camera.update
 
       var light = lights.get(0)

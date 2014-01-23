@@ -96,13 +96,13 @@ class GameSimulation extends Simulation {
 
       ship.transform.translate(translate)
 
-      val rotX = (middleX - Gdx.input.x) / 16
-      val rotY = (middleY - Gdx.input.y) / 16
+      val rotX = rotationX
+      val rotY = rotationY
       rotateX(ship, rotX)
       rotateY(ship, rotY)
       
       // camera, cursor and space follows the ship
-      val tr = shipTranslate
+      val tr = shipTranslation
       space.transform.setToTranslation(tr)
       
       if (Gdx.input.isButtonPressed(Input.Buttons.LEFT) && 
@@ -140,10 +140,18 @@ class GameSimulation extends Simulation {
       menuMusic.play
    }
    
-   public def getShipTranslate() {
+   public def getShipTranslation() {
       things.get("ship").transform.getTranslation(new Vector3(0,0,0))
    }
    
+   public def getRotationX() {
+      (middleX - Gdx.input.x) / 16
+   }
+
+   public def getRotationY() {
+      (middleY - Gdx.input.y) / 16
+   }
+
    def rotateX(ModelInstance ship, int rotX) {
       val rotXAxis = new Vector3(0,1,0)
       var curRotX = (ship.transform.getRotation(new Quaternion)
