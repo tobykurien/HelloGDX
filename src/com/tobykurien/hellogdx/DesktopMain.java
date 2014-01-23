@@ -14,6 +14,6 @@ public class DesktopMain {
       // vSync
       cfg.vSyncEnabled = true;
       
-      new LwjglApplication(new Main(), cfg);
+      new LwjglApplication(new MainStep3(), cfg);
    }
 }

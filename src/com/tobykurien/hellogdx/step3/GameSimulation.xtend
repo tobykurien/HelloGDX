@@ -1,4 +1,4 @@
-package com.tobykurien.hellogdx
+package com.tobykurien.hellogdx.step3
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input

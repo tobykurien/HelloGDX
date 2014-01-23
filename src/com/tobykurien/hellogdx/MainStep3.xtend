@@ -3,9 +3,11 @@ package com.tobykurien.hellogdx
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
+import com.tobykurien.hellogdx.step3.GameRenderer
+import com.tobykurien.hellogdx.step3.GameSimulation
 import com.tobykurien.libgdx.ThreeD.GameLoop
 
-class Main implements ApplicationListener {
+class MainStep3 implements ApplicationListener {
    GameLoop loop
    
    override create() {
