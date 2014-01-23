@@ -30,12 +30,15 @@ class GameSimulation extends Simulation {
    int middleY
    
    override populate() {
+      // catch cursor
+      Gdx.input.setCursorCatched(true);
+      Gdx.input.setCursorPosition(middleX, middleY);
       middleX = Gdx.graphics.width / 2
       middleY = Gdx.graphics.height / 2
 
-      menuMusic = Gdx.audio.newMusic(new FileHandle("data/plane.ogg"))
-      disposables.add(menuMusic)
-      menuMusic.setLooping(true)      
+//      menuMusic = Gdx.audio.newMusic(new FileHandle("data/plane.ogg"))
+//      disposables.add(menuMusic)
+//      menuMusic.setLooping(true)      
       //menuMusic.play
       
       pew = Gdx.audio.newSound(new FileHandle("data/laser_shooting_sfx.wav"))
@@ -57,10 +60,6 @@ class GameSimulation extends Simulation {
       disposables.add(bullet)
 
       loadAllModels("data")
-      
-      // catch cursor
-      Gdx.input.setCursorCatched(true);
-      Gdx.input.setCursorPosition(middleX, middleY);
    }
    
    override update(float delta) {
