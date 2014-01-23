@@ -22,12 +22,8 @@ class GameRenderer extends Renderer {
       ))
    }
 
-   override render(Simulation simulation, float delta) {
-      Gdx.gl => [
-         glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight())
-         glClear(GL10.GL_COLOR_BUFFER_BIT.bitwiseOr(GL10.GL_DEPTH_BUFFER_BIT))  
-      ]
-
+   override setProjectionAndCamera(Simulation simulation) {
+      // camera and light to follow the ship
       val sim = simulation as GameSimulation
       val tr = sim.shipTranslation
       val rotX = sim.rotationX
