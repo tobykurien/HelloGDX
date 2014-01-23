@@ -11,9 +11,9 @@ import com.badlogic.gdx.graphics.g3d.Material
 import com.badlogic.gdx.graphics.g3d.Model
 import com.badlogic.gdx.graphics.g3d.ModelInstance
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute
-import com.badlogic.gdx.graphics.g3d.loader.ObjLoader
 import com.badlogic.gdx.math.Quaternion
 import com.badlogic.gdx.math.Vector3
+import com.badlogic.gdx.utils.Disposable
 import com.tobykurien.libgdx.ThreeD.Simulation
 import java.util.ArrayList
 import java.util.List
@@ -59,8 +59,10 @@ class GameSimulation extends Simulation {
             Usage.Position.bitwiseOr(Usage.Normal));      
       disposables.add(bullet)
 
-      loadAllModels("data")
+      // load all models from assets
+      loadAllModels("data")      
    }
+   
    
    override update(float delta) {
       if (paused) return;
@@ -130,13 +132,13 @@ class GameSimulation extends Simulation {
    }
 
    override pause() {
-      menuMusic.pause
+      //menuMusic.pause
       paused = true
    }
    
    override resume() {
       paused = false
-      menuMusic.play
+      //menuMusic.play
    }
    
    public def getShipTranslation() {
