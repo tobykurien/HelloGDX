@@ -17,12 +17,13 @@ class ScreenRenderer {
    float elapsedTime
    Animation explosion
 
+   Texture turtle
    List<Texture> tiles = newArrayList
    int[] map = #[
-      0,0,0,0,0,
-      0,4,4,0,0,
-      0,0,0,0,0,
       0,0,0,3,3,
+      0,4,4,1,1,
+      0,0,0,1,1,
+      0,0,0,1,1,
       2,2,2,1,1
    ]
 
@@ -75,7 +76,7 @@ class ScreenRenderer {
          ]
       ]
 
-      spriteBatch.draw(explosion.getKeyFrame(elapsedTime, true), 100, 100);
+      spriteBatch.draw(explosion.getKeyFrame(elapsedTime, true), 0, 0);
       spriteBatch.end(); //<-- 
    }
    

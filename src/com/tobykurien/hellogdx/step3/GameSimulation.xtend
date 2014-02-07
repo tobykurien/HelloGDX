@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.Disposable
 import com.tobykurien.libgdx.ThreeD.Simulation
 import java.util.ArrayList
 import java.util.List
+import sun.awt.image.PixelConverter.Bgrx
 
 class GameSimulation extends Simulation {
    var bullets = new ArrayList<ModelInstance>
@@ -116,9 +117,9 @@ class GameSimulation extends Simulation {
          instances.add(b)
          lastBulletTime = System.currentTimeMillis
       }
-
+      
       // make bullets clone so we can modify bullets
-      var bulletsClone = bullets.clone as List<ModelInstance> 
+      val bulletsClone = bullets.clone as List<ModelInstance> 
       // move bullets
       bulletsClone.forEach [b|
          if (b.transform.values.get(14) > 20) {
