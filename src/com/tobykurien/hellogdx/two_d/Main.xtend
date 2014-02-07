@@ -1,4 +1,4 @@
-package com.tobykurien.hellogdx
+package com.tobykurien.hellogdx.two_d
 
 import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
